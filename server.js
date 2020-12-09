@@ -3,7 +3,12 @@ const dotenv = require('dotenv'); // allows to create global varialbes
 const colors = require('colors'); //extra
 const morgan = require('morgan');
 
+const connectDB = require('./config/db');
+
 dotenv.config({path: './config/config.env'});
+
+connectDB();
+
 
 //bring the file in to 
 const transactions =require('./routes/transactions');
