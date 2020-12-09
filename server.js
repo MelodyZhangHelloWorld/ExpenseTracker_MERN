@@ -4,9 +4,15 @@ const colors = require('colors'); //extra
 const morgan = require('morgan');
 
 dotenv.config({path: './config/config.env'});
+
+//bring the file in to 
+const transactions =require('./routes/transactions');
+
 const app = express();
 
-app.get('/', (req, res) => res.send('<h1>Test out the backend!</h1>'));
+// app.get('/', (req, res) => res.send('<h1>Test out the backend!</h1>'));
+//mount the route:
+app.use('/api/v1/transactions', transactions);
 
 const PORT = process.env.PORT || 5000;
 
