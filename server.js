@@ -14,6 +14,7 @@ connectDB();
 const transactions =require('./routes/transactions');
 
 const app = express();
+app.use(express.json()); //allows the body parser
 
 // app.get('/', (req, res) => res.send('<h1>Test out the backend!</h1>'));
 //mount the route:
