@@ -16,6 +16,11 @@ const transactions =require('./routes/transactions');
 const app = express();
 app.use(express.json()); //allows the body parser
 
+
+if(process.env.NODE_ENV === 'development'){
+    app.use(morgan('dev'));
+}
+
 // app.get('/', (req, res) => res.send('<h1>Test out the backend!</h1>'));
 //mount the route:
 app.use('/api/v1/transactions', transactions);
